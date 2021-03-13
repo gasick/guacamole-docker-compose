@@ -3,7 +3,7 @@ Start docker-compose
 docker-compose up -d
 ```
 
-Run script(only first time)
+Run script(first time only)
 ```
 ./firstrun.sh
 ```
