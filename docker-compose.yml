@@ -11,14 +11,14 @@ services:
     container_name: guacamole
     links: 
       - guacd
-      - guacpsql
+      - guacpg
     env_file:
       - .env
     ports:
       - 8080:8080
 
 
-  guacpsql:
+  guacpg:
     image: postgres:13
     env_file:
       - .env
