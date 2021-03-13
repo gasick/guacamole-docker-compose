@@ -3,9 +3,9 @@ Start docker-compose
 docker-compose up -d
 ```
 
-run script
+Run script(only first time)
 ```
 ./firstrun.sh
 ```
 
-Here you got: localhost:8080/guacamole
+Here you go: localhost:8080/guacamole
