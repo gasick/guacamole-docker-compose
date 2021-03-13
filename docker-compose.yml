@@ -1,0 +1,28 @@
+version: "2"
+services:
+  guacd:
+    image: guacamole/guacd:1.3.0
+
+
+  #first time you need to run:
+  # /opt/guacamole/bin/initdb.sh --postgres > initdb.sql
+  guac:
+    image: guacamole/guacamole:1.3.0
+    container_name: guacamole
+    links: 
+      - guacd
+      - guacpsql
+    env_file:
+      - .env
+    ports:
+      - 8080:8080
+
+
+  guacpsql:
+    image: postgres:13
+    env_file:
+      - .env
+    volumes:
+      - ./postgresql/dumps:/code/dumps
+      - ./postgresql/data:/var/lib/postgresql/data
+
